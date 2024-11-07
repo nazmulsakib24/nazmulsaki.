@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link id='favicon' rel="shortcut icon" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj7WeEmL7CQyd_9AOakhmvNpwf7e5EdiITyzDO2fdCXQgtU6-xSG-lnUNn8WINszwQyMR0gdDFeR8tyCPNQrI4JPx_Pi-500tvJphBAThI-HaMvz2Vre_zrjXhbbtMSlblZkpJUYvIhgcfy0pD18v3B8Nt5w5a1wZWtDbI5IydELT8NSjkKYMmrFcVqKnCV/s16000/favicon.png" type="image">
+        <!-- FONT-AWSOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- MAIN CSS -->
+    
+         <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url(body.css);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Nunito", sans-serif;
+}
+
+:root {
+    --bg-color: #191f36;
+    --snd-bg-color: #262B40;
+    --text-color: #ffff;
+    --main-color: #59B2F4;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-y: scroll;
+}
+
+html::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+  html::-webkit-scrollbar-track {
+    background: rgb(235, 202, 245);
+  }
+  html::-webkit-scrollbar-thumb {
+    background: #1b7701;
+  }
+
+  html::-webkit-scrollbar {
+    width: 0px;
+  }
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+.loader_bg{
+    position: fixed;
+    z-index: 999999;
+    background: var(--bg-color);
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+.loader{
+    border: 1px soild transparent;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: calc(50vh - 75px);
+    left: calc(50vw - 75px);
+}
+.loader:before, .loader:after{
+    content: '';
+    border: 1em solid var(--main-color);
+    border-radius: 50%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: loader 2s linear infinite;
+    opacity: 0;
+}
+.loader:before{
+    animation-delay: .5s;
+}
+@keyframes loader{
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    background: #010718;
+}
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--bg-color);
+    display: none;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-content h3 {
+    font-size: 3.7rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+.home-content p {
+    font-size: 100px;
+    font-weight: bold;
+    width: 85%;
+}
+
+span {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.home-img img {
+    width: 25vw;
+    animation: floatImage 4s ease-in-out infinite;
+    cursor: pointer;
+}
+
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.4rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.home-content p {
+    font-size: 1.6rem;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: var(--snd-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+}
+.btn:hover {
+    box-shadow: none;
+}
+
+#btni {
+    color: white;
+    font-weight: bold;
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background: var(--snd-bg-color);
+}
+
+.about-img img {
+    width: 35vw;
+}
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+}
+
+.about-content p {
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+}
+
+.services h1 {
+    margin-bottom: 5rem;
+    font-size: 3.5rem;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration-color: var(--text-color);
+    text-underline-offset: .3em;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .services-border {
+    flex: 1 1 30rem;
+    background: var(--snd-bg-color);
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.services-container .services-border:hover {
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.services-border i {
+    font-size: 7rem;
+    color: var(--main-color);
+    margin-top: 8%;
+}
+.services-border h3 {
+    font-size: 2.6rem;
+}
+
+.services-border p {
+    font-size: 1.6rem;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: auto;
+}
+
+#btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--main-color);
+    font-size: 1.6rem;
+    color: var(--bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease;
+    margin-bottom: 8%;
+    margin-top: 8%;
+}
+
+#btn:hover {
+    box-shadow: none;
+}
+
+.portfolio {
+    background: var(--snd-bg-color);
+}
+
+.portfolio h2 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.portfolio-container .portfolio-box{
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;
+    display: flex;
+}
+
+.portfolio-box img {
+    width: 100%;
+    transition: .5s ease;
+    opacity: 0.7;
+}
+
+.portfolio-box:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+    transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+    font-size: 3rem;
+}
+
+.portfolio-layer p {
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--snd-bg-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i {
+    font-size: 2rem;
+    color: var(--snd-bg-color);
+}
+
+.portfolio-layer i {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+}
+
+.contact form {
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contact form .input-box {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: var(--snd-bg-color);
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+.contact form .input-box input {
+    width: 49%;
+}
+
+.contact form textarea {
+    resize: none;
+}
+
+.contact form .btn {
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--snd-bg-color);
+}
+
+.footer-text {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem 1rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--snd-bg-color);
+}
+
+/* BREAKPOINT */
+
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section{
+        padding: 10rem 3%;
+    }
+
+    .services{
+        padding: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .contact{
+        min-height: auto;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 760px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: relative;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+    .navbar .active {
+        display: block;
+    }
+
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    .home{
+        flex-direction: column;
+    }
+
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+
+    .home-content h1{
+        font-size: 5rem;
+    }
+    .home-content {
+        order: 2;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .about-img img {
+        width: 90vw;
+        margin-top: 4rem;
+    }
+
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+    .home-img img {
+        width: 80vw;
+        margin-top: 8rem;
+    }
+
+    .about-img img {
+        width: 100vw;
+        margin-top: 4em;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .contact form .input-box input {
+        width: 100%;
+    }
+}
+/* style end */
+
+/* css to reset all the designs */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+:root {
+    --bg-color: #191f36;
+    --snd-bg-color: #262B40;
+    --text-color: #ffff;
+    --main-color: #59B2F4;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* css to reset all the designs */
+
+/* add styles on elements */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    border: none;
+}
+
+#logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+    cursor: default;
+    text-transform: uppercase;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    border: 0.1px transparent var(--bg-color);
+    /* border: 1px solid transparent; */
+}
+
+.navbar a {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    margin-left: 6rem;
+    font-weight: bold;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #482ff7;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    /* background-color: #101010; */
+    background-color: #fff;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item{
+    font-weight: bold;
+}
+
+.nav-link {
+    /* font-size: 1.6rem; */
+    font-size: 2rem;
+    font-weight: 400;
+    /* color: #475569; */
+    color: #fff;
+    /* change */
+}
+
+.nav-link:hover {
+    color: #482ff7;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        /* background-color: #fff; */
+        background-color: #010718;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-link {
+        color: #fff;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        margin-left: 80%;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+}
+
+/* add styles on elements */
+/* boddy end */
+
+:root {
+    --bg-color: #010718;
+    --snd-bg-color: #262B40;
+    --text-color: #ffff;
+    --main-color: #59B2F4;
+}
+.text-animation{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+.text-animation span{
+    position: relative;
+}
+.text-animation span::before{
+    content: "Web Developer";
+    color: var(--main-color);
+    animation: words 20s infinite;
+}
+.text-animation span::after{
+    content: "";
+    background-color: var(--bg-color);
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8px;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+}
+@keyframes cursor {
+    to{
+        border-left: 2px solid var(--main-color);
+    }
+}
+@keyframes words{
+    0%,
+    20%{
+        content: "Web Developer";
+    }
+    21%,
+    40%{
+        content: "Graphic Designer";
+    }
+    41%,
+    60%{
+        content: "Apps Developer";
+    }
+    61%,
+    80%{
+        content: "UI / UX Designer";
+    }
+    81%,
+    100%{
+        content: "Software Engineer";
+    }
+}
+@keyframes typing {
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95%{
+        width: 0;
+    }
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85%{
+        width: calc(100% + 8px);
+    }
+}
+
+/* text end */
+
+/* css end */
+
+        .btn2:hover {
+            box-shadow: none;
+        }
+         </style>
+        <title>Nazmul Sakib | Portfolio Website</title>
+    </head>
+<body>
+        <!-- pre loader -->
+        <div class="loader_bg">
+            <div class="loader"></div>
+        </div>
+        <!-- pre loader end -->
+
+    <header class="header">
+        <a href="#" class="logo" id="logo">Nazmul Portfolio</a>
+        <nav class="navbar">
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#about" class="nav-link">About</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#services" class="nav-link">Services</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+        <!-- HOME SECTION DESIGN -->
+        <section class="home" id="home">
+            <div class="home-content">
+                <h3>Hi, Myself</h3>
+                <h1>I am Nazmul Sakib</h1>
+
+                <h3 class="text-animation">I'm a <span></span></h3>
+    
+                <p>I am a passionate Web Designer with 2 years of hands-on experience in creating dynamic and responsive
+                    websites using HTML5, CSS3, Bootstrap5 and JavaScript. My background includes designing and
+                    developing by Python various websites that prioritize user experience and aesthetic appeal.</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/nazmulsakib24" target="_blank"><i class="fa-brands fa-facebook fa-bounce"></i></a>
+                    <a href="https://www.instagram.com/mdnazmul8309/"><i class="fab fa-instagram fa-bounce"></i></a>
+                    <a href="https://twitter.com/MdNazmulsakib15" target="_blank"><i class="fa-brands fa-twitter fa-bounce"></i></a>
+                    <a href="https://github.com/nazmul546924" target="_blank"><i class="fa-brands fa-github fa-bounce"></i></a>
+                    <a href="https://www.linkedin.com/in/nazmul-sakib/" target="_blank"><i class="fa-brands fa-linkedin fa-bounce"></i></a>
+                    <a href="https://www.youtube.com/@magastudio54" target="_blank"><i class="fa-brands fa-youtube fa-bounce"></i></a>
+                </div>
+                <a href="#" class="btn" id="btni">Download CV</a>
+            </div>
+    
+            <div class="home-img">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiU0Q5MGWux_F_udMJ2CYED_76GOI1yHVNS0FvhOUHAtGl8MKYZSgJ8IvyczBrzlFmy7WQDvhMOeJGbHT-jbJ8Rz_MaWkwusW58864Q-J917MNF0Yg9Zs_X30S81e7h5_T7H1_fhGSCiKy7p9CZ9tLcTgv69jTlTKM1HYeKxvsqsSwtmAYkMqylBBP900_J/s16000/profiledp.png" alt="">
+            </div>
+    
+         </section>
+
+              <!-- ABOUT SECTION DESIGN -->
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjEb0Dmu3A9eS-tmhS9-fPxJO23qDVsrcQSFNW3klpVbGYF338FSCW4Cv9BqUu0DHh4jz5u31tkk6wuVJg1NPUAw-lDP0hFSFy_SkthNXagTRzOcYAmoowaEiKwPR6L1JXj0Zv04sg99IZpfdh8IzYLwinhMepmK_mgiMyD-VIv3z3NhlqZ3MGwRNQ_CWA/s16000/aboutpic.png" alt="">
+        </div>
+
+        <div class="about-content">
+            <h2 class="heading">ABOUT <span>Me</span></h2>
+            <h3>Frontend Developer</h3>
+            <p>Hi, There, I am Md:Nazmu Sakib. I am a Software Engineer. I am a web developer. I am a Android Apps Devloper. And Any another Coding Development Expart. And any other web development program customization tools are learning now in 2022. I am a graphic designer. 🔘Photoshop 🔘Illustrator | I am an Apps developer.
+            </p>
+            <a href="#" class="btn" id="btni">Read more</a>
+        </div>
+    </section>
+
+        <!-- SERVICES SECTION DESIGN -->
+        <section class="services" id="services">
+            <h1>MY <span>SERVICES</span></h1>
+    
+            <div class="services-container">
+                <div class="services-border">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Web Development</h3>
+                    <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                    <a href="#" id="btn">Read More</a>
+                </div>
+    
+                <div class="services-border">
+                    <i class="fa-solid fa-pen-nib"></i>                <h3>Graphic Design</h3>
+                    <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                    <a href="#" id="btn">Read More</a>
+                </div>
+    
+                <div class="services-border">
+                    <i class="fa-brands fa-android"></i>
+                    <h3>Apps Development</h3>
+                    <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                    <a href="#" id="btn">Read More</a>
+                </div>
+            </div>
+    <!--  -->
+            <br />
+    <!--  -->
+            <div class="services-container">
+    
+                <div class="services-border">
+                    <i class="fa-solid fa-palette"></i>
+                    <h3>UI/UX Designing</h3>
+                    <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                    <a href="#" id="btn">Read More</a>
+                </div>
+    
+                <div class="services-border">
+                    <i class="fa-brands fa-python"></i>
+                    <h3>Software Development</h3>
+                    <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                    <a href="#" id="btn">Read More</a>
+                </div>
+    
+                <div class="services-border">
+                    <i class="fa-brands fa-js"></i>
+                    <h3>Programing & Design</h3>
+                    <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                    <a href="#" id="btn">Read More</a>
+                </div>
+    
+                <div class="services-border">
+                    <i class="fa-brands fa-wordpress"></i>
+                    <h3>CMS & Server</h3>
+                    <p>Hi i am Nazmul Sakib | I am a web designer | I am a Graphic Designer | | And Apps Developer | | And become a ethical hacker l | And Fetcher a Software Engineer |</p>
+                    <a href="#" id="btn">Read More</a>
+                </div>
+            </div>
+         </section>
+
+              <!-- PORTFOLIO SECTION DESIGN -->
+      <section class="portfolio" id="portfolio">
+        <h2 class="heading">Latest <span>Project</span></h2>
+
+        <div class="portfolio-container">
+            <div class="portfolio-box">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3-JJeJGadMmViX3TRtAmzphw_Vzx4M35b88jgLNlx17a8-o-Ta66ynnc06TXDPqShLsvgH_DlTfCiQLij__8Yd_gXPgBBsxbOO7jols-ZV6Nyfk8IWPEeeMN6jkXf16rbq9yvS8RPS_C0-T4eRWkNQ7IG0EmqsskSxoJ_bJRw0FuRIsmTfxvDHnb2l0g6/s16000/1.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijX4diPEdDwSqyeoobhgk0Zr991nc4HP0c5PXImNryfafPygVA9Dzej-pAj64yJD8UUcaKPhwdRTNbayImqKbpOdMFG_RIiQtmNvuuVb0oi7VZQ1QgKhzXDaYuZ7d2ELzqjuZ5Q2bI2LleYHA2MtU7JRgrR5jooTtxfH3df7QCG1eJtIDqlkUN3ulsoV0R/s16000/2.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+
+            <div class="portfolio-box">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhn3rl9iHaHSnQCT0T98QCbKnb-fkQz09_gNq8aObBWOnSJ4PHxhamd3rTGQVZTdokYOKTWnoP7cHERYEkgBMuj1ClBCqYg6AqZ6-DvlUqcxjPwX1rv_t16dzs54jsSJzFqN6w77ZiEccgHJiRXDVxGRRRU-GD4XYiq9oUqSz_ppnM_DqI-uwfVPK53DgVm/s16000/3.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj4Oc-LSjafFtH1YoMwNAbGwPjjUXzvVPjUghpcFmunPl-vJGckfDhhg-hOzG_vMc9k6O1nYX1jJnNByFZKL7vcGxpdTRdDuQuU9w3JIUebsvzaod8Ab1OscMXBrf0ZLA63bCaxr4v0T0gm2LCCx31AZm5frqzTa710sw7vpRcz-fRCNhLPuPzcanHqmK1T/s16000/4.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgSK8Shikja3iGHeMgQXNIRH_A5D7MM0ttKZN2ucysqjYZXaZFUAXHualhE43poVB3Ykl1lR0j2643r9qR7u0eq4gdv4ajkVAbb1UXDYtyQhwO_9rEipAi0eEdvG8bSC3ONWLbuviV11Sl1AxSYf6hVmHQYjmrT1t2EMpfU9TeAF0Iwaw1uFyZu1L3Jxn-c/s16000/5.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgV3owovLeWgRk1z0LyaJ_WcVmit5JPZtkUVMgSNxLmnJEgBchcuGYf_BdFcIIdp7DLRIC6oQOoWysiQ2A9aoNYEq0jtbbQCy1PPH1VfcVC9qzC6rDsen2QIgFHzazhgMai5HVWksYKX5xRT5XHyv3zLf6tTETbfVJNp1-PTn1Gj1_jMGOMxqkSob8Orm2h/s16000/6.jpg" alt="">
+                <div class="portfolio-layer">
+                    <h4>Web Design</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <i class="fa-solid fa-up-right-from-square"></i>
+                </div>
+            </div>
+        </div>
+      </section>
+
+          <!-- CONTACT SECTION DESIGN -->
+
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form action="#">
+            <div class="input-box">
+                <input type="text" name="" id="" placeholder="Full Name">
+                <input type="email" name="" id="" placeholder="Email Address">
+            </div>
+
+            <div class="input-box">
+                <input type="number" name="" id="" placeholder="Mobile Number">
+                <input type="text" name="" id="" placeholder="Email Subject">
+            </div>
+            <textarea name="" id="" cols="30" rows="10" placeholder="Your Massage"></textarea>
+            <input type="submit" value="Send Message" class="btn">
+        </form>
+    </section>
+
+        <!-- FOOTER DESIGN -->
+
+        <footer class="footer">
+            <div class="footer-text">
+                <p>Copyrignt &copy; 2024 by @nazmulsakib24 | All Rights Reserved.</p>
+            </div>
+    
+            <div class="footer-iconTop">
+                <a href="#home"><i class="fa-solid fa-angle-up"></i></a>
+            </div>
+        </footer>
+    
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+
+// when we click on hamburger icon its close 
+
+const navLink = document.querySelectorAll(".nav-link");
+
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        setTimeout(function(){
+            $('.loader_bg').fadeToggle();
+        }, 3000);
+    </script>
+</body>
+</html>
